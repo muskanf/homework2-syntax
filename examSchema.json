@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/examSchema.json",
+  "title": "Online Exam Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "courseName",
+    "examNumber",
+    "professorName",
+    "professorEmail",
+    "pointTotal",
+    "student",
+    "instructions",
+    "questions"
+  ],
+  "properties": {
+    "courseName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "examNumber": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "professorName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "professorEmail": {
+      "type": "string",
+      "format": "email"
+    },
+    "pointTotal": {
+      "type": "number",
+      "minimum": 0
+    },
+    "student": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "id"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "instructions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/booleanQuestion" },
+          { "$ref": "#/$defs/scaleQuestion" },
+          { "$ref": "#/$defs/singleChoiceQuestion" },
+          { "$ref": "#/$defs/multipleChoiceQuestion" },
+          { "$ref": "#/$defs/shortTextQuestion" },
+          { "$ref": "#/$defs/longTextQuestion" },
+          { "$ref": "#/$defs/blockScaleQuestion" }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "baseQuestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["number", "points", "text", "type"],
+      "properties": {
+        "number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "points": {
+          "type": "number",
+          "minimum": 0
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+
+    "booleanQuestion": {
+      "allOf": [
+        { "$ref": "#/$defs/baseQuestion" },
+        {
+          "properties": {
+            "type": { "const": "boolean" },
+            "labels": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        }
+      ]
+    },
+
+    "scaleQuestion": {
+      "allOf": [
+        { "$ref": "#/$defs/baseQuestion" },
+        {
+          "required": ["labels"],
+          "properties": {
+            "type": { "const": "scale" },
+            "labels": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 2
+            }
+          }
+        }
+      ]
+    },
+
+    "singleChoiceQuestion": {
+      "allOf": [
+        { "$ref": "#/$defs/baseQuestion" },
+        {
+          "required": ["options"],
+          "properties": {
+            "type": { "const": "singleChoice" },
+            "options": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 2
+            }
+          }
+        }
+      ]
+    },
+
+    "multipleChoiceQuestion": {
+      "allOf": [
+        { "$ref": "#/$defs/baseQuestion" },
+        {
+          "required": ["options"],
+          "properties": {
+            "type": { "const": "multipleChoice" },
+            "options": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 2
+            }
+          }
+        }
+      ]
+    },
+
+    "shortTextQuestion": {
+      "allOf": [
+        { "$ref": "#/$defs/baseQuestion" },
+        {
+          "properties": {
+            "type": { "const": "shortText" },
+            "maxLength": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      ]
+    },
+
+    "longTextQuestion": {
+      "allOf": [
+        { "$ref": "#/$defs/baseQuestion" },
+        {
+          "properties": {
+            "type": { "const": "longText" }
+          }
+        }
+      ]
+    },
+
+    "blockScaleQuestion": {
+      "allOf": [
+        { "$ref": "#/$defs/baseQuestion" },
+        {
+          "required": ["labels", "items"],
+          "properties": {
+            "type": { "const": "blockScale" },
+            "labels": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 2
+            },
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["subNumber", "text"],
+                "properties": {
+                  "subNumber": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

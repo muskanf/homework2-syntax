@@ -1,0 +1,80 @@
+{
+  "courseName": "COMP 3400",
+  "examNumber": 2,
+  "professorName": "Dr. Skibidi",
+  "professorEmail": "skibidi@university.edu",
+  "pointTotal": 100,
+  "student": {
+    "name": "Jim Bob",
+    "id": "12345678"
+  },
+  "instructions": [
+    "Answer all questions.",
+    "Read each question carefully.",
+    "No outside resources allowed."
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "points": 2,
+      "text": "The Earth revolves around the Sun.",
+      "type": "boolean",
+      "labels": ["True", "False"]
+    },
+    {
+      "number": 2,
+      "points": 4,
+      "text": "Rate your confidence in JSON Schema.",
+      "type": "scale",
+      "labels": ["1", "2", "3", "4", "5", "6"]
+    },
+    {
+      "number": 3,
+      "points": 3,
+      "text": "Which data format uses angle brackets?",
+      "type": "singleChoice",
+      "options": ["JSON", "XML", "CSV", "YAML"]
+    },
+    {
+      "number": 4,
+      "points": 5,
+      "text": "Which of the following are programming languages?",
+      "type": "multipleChoice",
+      "options": ["Python", "HTML", "Java", "CSS"]
+    },
+    {
+      "number": 5,
+      "points": 6,
+      "text": "Define JSON in one sentence.",
+      "type": "shortText",
+      "maxLength": 100
+    },
+    {
+      "number": 6,
+      "points": 10,
+      "text": "Explain why validation is important in data exchange systems.",
+      "type": "longText"
+    },
+    {
+      "number": 7,
+      "points": 12,
+      "text": "Rate the following statements.",
+      "type": "blockScale",
+      "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+      "items": [
+        {
+          "subNumber": "7a",
+          "text": "JSON is human-readable."
+        },
+        {
+          "subNumber": "7b",
+          "text": "Schemas help enforce structure."
+        },
+        {
+          "subNumber": "7c",
+          "text": "Validation is useful."
+        }
+      ]
+    }
+  ]
+}

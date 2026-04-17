@@ -24,16 +24,16 @@
     {
       "number": 2,
       "points": 4,
-      "text": "Rate your confidence in JSON Schema.",
+      "text": "On a scale of 1-5, rate your interest in calculus.",
       "type": "scale",
       "labels": ["1", "2", "3", "4", "5", "6"]
     },
     {
       "number": 3,
       "points": 3,
-      "text": "Which data format uses angle brackets?",
+      "text": "Wich topic in calculus is your favorite?",
       "type": "singleChoice",
-      "options": ["JSON", "XML", "CSV", "YAML"]
+      "options": ["derivatives", "integration", "series", "DiffEq"]
     },
     {
       "number": 4,
@@ -45,36 +45,36 @@
     {
       "number": 5,
       "points": 6,
-      "text": "Define JSON in one sentence.",
+      "text": "Define converging series in one sentence.",
       "type": "shortText",
       "maxLength": 100
     },
     {
       "number": 6,
       "points": 10,
-      "text": "Explain why validation is important in data exchange systems.",
+      "text": "Prove why 0! is 1.",
       "type": "longText"
     },
     {
-      "number": 7,
-      "points": 12,
-      "text": "Rate the following statements.",
-      "type": "blockScale",
-      "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
-      "items": [
-        {
-          "subNumber": "7a",
-          "text": "JSON is human-readable."
-        },
-        {
-          "subNumber": "7b",
-          "text": "Schemas help enforce structure."
-        },
-        {
-          "subNumber": "7c",
-          "text": "Validation is useful."
-        }
-      ]
+  "number": 7,
+  "points": 12,
+  "text": "For each calculus statement below, indicate your level of agreement.",
+  "type": "blockScale",
+  "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+  "items": [
+    {
+      "subNumber": "7a",
+      "text": "If f'(x) > 0 on an interval, then f is increasing on that interval."
+    },
+    {
+      "subNumber": "7b",
+      "text": "The derivative of sin(x^2) is cos(x^2)."
+    },
+    {
+      "subNumber": "7c",
+      "text": "A definite integral can be interpreted as signed area under a curve."
     }
   ]
 }
+      ]
+    }

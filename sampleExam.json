@@ -24,16 +24,16 @@
     {
       "number": 2,
       "points": 4,
-      "text": "On a scale of 1-5, rate your interest in calculus.",
+      "text": "On a scale of 1-6, rate your interest in calculus.",
       "type": "scale",
       "labels": ["1", "2", "3", "4", "5", "6"]
     },
     {
       "number": 3,
       "points": 3,
-      "text": "Wich topic in calculus is your favorite?",
+      "text": "Which topic in calculus is your favorite?",
       "type": "singleChoice",
-      "options": ["derivatives", "integration", "series", "DiffEq"]
+      "options": ["Derivatives", "Integration", "Series", "Differential Equations"]
     },
     {
       "number": 4,
@@ -45,36 +45,36 @@
     {
       "number": 5,
       "points": 6,
-      "text": "Define converging series in one sentence.",
+      "text": "Define a convergent series in one sentence.",
       "type": "shortText",
       "maxLength": 100
     },
     {
       "number": 6,
       "points": 10,
-      "text": "Prove why 0! is 1.",
+      "text": "Explain why 0! = 1.",
       "type": "longText"
     },
     {
-  "number": 7,
-  "points": 12,
-  "text": "For each calculus statement below, indicate your level of agreement.",
-  "type": "blockScale",
-  "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
-  "items": [
-    {
-      "subNumber": "7a",
-      "text": "If f'(x) > 0 on an interval, then f is increasing on that interval."
-    },
-    {
-      "subNumber": "7b",
-      "text": "The derivative of sin(x^2) is cos(x^2)."
-    },
-    {
-      "subNumber": "7c",
-      "text": "A definite integral can be interpreted as signed area under a curve."
+      "number": 7,
+      "points": 12,
+      "text": "For each calculus statement below, indicate your level of agreement.",
+      "type": "blockScale",
+      "labels": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+      "items": [
+        {
+          "subNumber": "7a",
+          "text": "If f'(x) > 0 on an interval, then f is increasing on that interval."
+        },
+        {
+          "subNumber": "7b",
+          "text": "The derivative of sin(x^2) is cos(x^2)."
+        },
+        {
+          "subNumber": "7c",
+          "text": "A definite integral can be interpreted as signed area under a curve."
+        }
+      ]
     }
   ]
 }
-      ]
-    }

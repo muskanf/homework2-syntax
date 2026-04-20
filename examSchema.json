@@ -74,7 +74,6 @@
   "$defs": {
     "baseQuestion": {
       "type": "object",
-      "additionalProperties": false,
       "required": ["number", "points", "text", "type"],
       "properties": {
         "number": {
@@ -99,11 +98,30 @@
       "allOf": [
         { "$ref": "#/$defs/baseQuestion" },
         {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["labels"],
           "properties": {
-            "type": { "const": "boolean" },
+            "number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "points": {
+              "type": "number",
+              "minimum": 0
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "type": {
+              "const": "boolean"
+            },
             "labels": {
               "type": "array",
-              "items": { "type": "string" },
+              "items": {
+                "type": "string"
+              },
               "minItems": 2,
               "maxItems": 2
             }
@@ -116,12 +134,30 @@
       "allOf": [
         { "$ref": "#/$defs/baseQuestion" },
         {
+          "type": "object",
+          "additionalProperties": false,
           "required": ["labels"],
           "properties": {
-            "type": { "const": "scale" },
+            "number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "points": {
+              "type": "number",
+              "minimum": 0
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "type": {
+              "const": "scale"
+            },
             "labels": {
               "type": "array",
-              "items": { "type": "string" },
+              "items": {
+                "type": "string"
+              },
               "minItems": 2
             }
           }
@@ -133,12 +169,30 @@
       "allOf": [
         { "$ref": "#/$defs/baseQuestion" },
         {
+          "type": "object",
+          "additionalProperties": false,
           "required": ["options"],
           "properties": {
-            "type": { "const": "singleChoice" },
+            "number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "points": {
+              "type": "number",
+              "minimum": 0
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "type": {
+              "const": "singleChoice"
+            },
             "options": {
               "type": "array",
-              "items": { "type": "string" },
+              "items": {
+                "type": "string"
+              },
               "minItems": 2
             }
           }
@@ -150,12 +204,30 @@
       "allOf": [
         { "$ref": "#/$defs/baseQuestion" },
         {
+          "type": "object",
+          "additionalProperties": false,
           "required": ["options"],
           "properties": {
-            "type": { "const": "multipleChoice" },
+            "number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "points": {
+              "type": "number",
+              "minimum": 0
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "type": {
+              "const": "multipleChoice"
+            },
             "options": {
               "type": "array",
-              "items": { "type": "string" },
+              "items": {
+                "type": "string"
+              },
               "minItems": 2
             }
           }
@@ -167,8 +239,24 @@
       "allOf": [
         { "$ref": "#/$defs/baseQuestion" },
         {
+          "type": "object",
+          "additionalProperties": false,
           "properties": {
-            "type": { "const": "shortText" },
+            "number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "points": {
+              "type": "number",
+              "minimum": 0
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "type": {
+              "const": "shortText"
+            },
             "maxLength": {
               "type": "integer",
               "minimum": 1
@@ -182,8 +270,24 @@
       "allOf": [
         { "$ref": "#/$defs/baseQuestion" },
         {
+          "type": "object",
+          "additionalProperties": false,
           "properties": {
-            "type": { "const": "longText" }
+            "number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "points": {
+              "type": "number",
+              "minimum": 0
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "type": {
+              "const": "longText"
+            }
           }
         }
       ]
@@ -193,12 +297,30 @@
       "allOf": [
         { "$ref": "#/$defs/baseQuestion" },
         {
+          "type": "object",
+          "additionalProperties": false,
           "required": ["labels", "items"],
           "properties": {
-            "type": { "const": "blockScale" },
+            "number": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "points": {
+              "type": "number",
+              "minimum": 0
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "type": {
+              "const": "blockScale"
+            },
             "labels": {
               "type": "array",
-              "items": { "type": "string" },
+              "items": {
+                "type": "string"
+              },
               "minItems": 2
             },
             "items": {
